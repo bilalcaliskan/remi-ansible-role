@@ -1,0 +1,16 @@
+---
+
+- name: Add Remi repository
+  yum_repository:
+    name: remi
+    description: Remi repository
+    baseurl: "{{ remi_repo_url }}"
+    gpgcheck: true
+    enabled: false
+
+- name: Ensure RPM public key is installed
+  rpm_key:
+    key: "{{ remi_public_key_url }}"
+    state: present
+
+...
