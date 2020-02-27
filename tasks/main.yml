@@ -6,11 +6,7 @@
     description: Remi repository
     baseurl: "{{ remi_repo_url }}"
     gpgcheck: true
+    gpgkey: "{{ remi_public_key_url }}"
     enabled: false
-
-- name: Ensure RPM public key is installed
-  rpm_key:
-    key: "{{ remi_public_key_url }}"
-    state: present
 
 ...
