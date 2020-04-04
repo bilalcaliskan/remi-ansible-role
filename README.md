@@ -1,38 +1,42 @@
-Role Name
-=========
+## Kafka Ansible Role
 
-A brief description of the role goes here.
+[![Build Status](https://travis-ci.org/bilalcaliskan/remi-ansible-role.svg?branch=master)](https://travis-ci.org/bilalcaliskan/remi-ansible-role)
 
-Requirements
-------------
+Sets up Remi repository on RHEL/CentOS 7/8 servers.
 
-Any pre-requisites that may not be covered by Ansible itself or the role should be mentioned here. For instance, if the role uses the EC2 module, it may be a good idea to mention in this section that the boto package is required.
+## Requirements
 
-Role Variables
---------------
+No special requirements; note that this role requires root access, so either run it in a playbook with a global `become: yes`, or invoke the role in your playbook like:
 
-A description of the settable variables for this role should go here, including any variables that are in defaults/main.yml, vars/main.yml, and any variables that can/should be set via parameters to the role. Any variables that are read from other roles and/or the global scope (ie. hostvars, group vars, etc.) should be mentioned here as well.
+      - hosts: all
+        roles:
+          - role: bilalcaliskan.remi
+            become: true
 
-Dependencies
-------------
+## Role Variables
 
-A list of other roles hosted on Galaxy should go here, plus any details in regards to parameters that may need to be set for other roles, or variables that are used from other roles.
+Available variables are listed below, along with default values (see `defaults/main.yml`):
 
-Example Playbook
-----------------
+        repo_url: http://fr2.rpmfind.net/linux/remi/enterprise/$releasever/remi/$basearch/
+        public_key_url: https://rpms.remirepo.net/RPM-GPG-KEY-remi
 
-Including an example of how to use your role (for instance, with variables passed in as parameters) is always nice for users too:
+## Dependencies
 
-    - hosts: servers
+None
+
+## Example Playbook File
+
+    - hosts: all
+      become: true
       roles:
-         - { role: username.rolename, x: 42 }
+        - role: bilalcaliskan.remi
+          vars:
+            empty_var: true
 
-License
--------
+* Inside `vars/main.yml`*:
 
-BSD
+    kafka_version: 123.123
 
-Author Information
-------------------
+## License
 
-An optional section for the role authors to include contact information, or a website (HTML is not allowed).
+MIT / BSD

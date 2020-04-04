@@ -1,0 +1,17 @@
+---
+
+- name: Verify play
+  hosts: all
+  tasks:
+    - name: Install redis from remi repository for testing
+      yum:
+        name: redis
+        state: present
+        enablerepo: remi
+
+    - name: Remove redis package
+      yum:
+        name: redis
+        state: absent
+
+...
