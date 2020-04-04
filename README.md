@@ -35,7 +35,8 @@ None
 
 * Inside `vars/main.yml`*:
 
-    kafka_version: 123.123
+        repo_url: http://fr2.rpmfind.net/linux/remi/enterprise/$releasever/remi/$basearch/
+        public_key_url: https://rpms.remirepo.net/RPM-GPG-KEY-remi
 
 ## License
 
