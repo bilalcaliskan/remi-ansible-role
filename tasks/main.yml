@@ -4,9 +4,9 @@
   yum_repository:
     name: remi
     description: Remi repository
-    baseurl: "{{ remi_repo_url }}"
+    baseurl: "{{ repo_url }}"
     gpgcheck: true
-    gpgkey: "{{ remi_public_key_url }}"
+    gpgkey: "{{ public_key_url }}"
     enabled: false
 
 ...

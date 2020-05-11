@@ -1,6 +1,6 @@
 ---
 
-remi_repo_url: http://mirror.veriteknik.net.tr/remi/enterprise/$releasever/remi/$basearch/
-remi_public_key_url: https://rpms.remirepo.net/RPM-GPG-KEY-remi
+repo_url: http://mirror.veriteknik.net.tr/remi/enterprise/$releasever/remi/$basearch/
+public_key_url: https://rpms.remirepo.net/RPM-GPG-KEY-remi
 
 ...
