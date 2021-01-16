@@ -8,5 +8,3 @@
     gpgcheck: true
     gpgkey: "{{ public_key_url }}"
     enabled: false
-
-...

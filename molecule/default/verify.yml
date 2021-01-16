@@ -13,5 +13,3 @@
       yum:
         name: redis
         state: absent
-
-...

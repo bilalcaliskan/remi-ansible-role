@@ -1,6 +1,6 @@
 ## Kafka Ansible Role
 
-[![Build Status](https://travis-ci.org/bilalcaliskan/remi-ansible-role.svg?branch=master)](https://travis-ci.org/bilalcaliskan/remi-ansible-role)
+[![CI](https://github.com/bilalcaliskan/remi-ansible-role/workflows/CI/badge.svg?event=push)](https://github.com/bilalcaliskan/remi-ansible-role/actions?query=workflow%3ACI)
 
 Sets up Remi repository on RHEL/CentOS 7/8 servers.
 
