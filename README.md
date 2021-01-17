@@ -1,43 +1,40 @@
-## Kafka Ansible Role
+## Remi Ansible Role
 
 [![CI](https://github.com/bilalcaliskan/remi-ansible-role/workflows/CI/badge.svg?event=push)](https://github.com/bilalcaliskan/remi-ansible-role/actions?query=workflow%3ACI)
 
 Sets up Remi repository on RHEL/CentOS 7/8 servers.
 
-## Requirements
+### Requirements
 
-No special requirements; note that this role requires root access, so either run it in a playbook with a global `become: yes`, or invoke the role in your playbook like:
+No special requirements. Also note that this role requires root access, so either run
+it in a playbook with a global `become: true`, or invoke the role in your playbook like:
 
-      - hosts: all
-        roles:
-          - role: bilalcaliskan.remi
-            become: true
+```yaml
+- hosts: all
+  become: true
+  roles:
+    - bilalcaliskan.remi
+```
 
-## Role Variables
+### Role Variables
+See the default values in [defaults/main.yml](defaults/main.yml). You can overwrite them in [vars/main.yml](vars/main.yml) if neccessary or you can set them while running playbook.
 
-Available variables are listed below, along with default values (see `defaults/main.yml`):
-
-        repo_url: http://fr2.rpmfind.net/linux/remi/enterprise/$releasever/remi/$basearch/
-        public_key_url: https://rpms.remirepo.net/RPM-GPG-KEY-remi
-
-## Dependencies
+### Dependencies
 
 None
 
-## Example Playbook File
+### Example Playbook File
 
-    - hosts: all
-      become: true
-      roles:
-        - role: bilalcaliskan.remi
-          vars:
-            empty_var: true
-
-* Inside `vars/main.yml`*:
-
+```yaml
+- hosts: all
+  become: true
+  roles:
+    - role: bilalcaliskan.remi
+      vars:
         repo_url: http://fr2.rpmfind.net/linux/remi/enterprise/$releasever/remi/$basearch/
         public_key_url: https://rpms.remirepo.net/RPM-GPG-KEY-remi
+```
 
-## License
+### License
 
 MIT / BSD
